@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.CalendarController">
+   <children>
+      <Label fx:id="sceneLabel" text="Label" />
+      <TabPane layoutX="-1.0" layoutY="27.0" prefHeight="488.0" prefWidth="682.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="week_tab" onSelectionChanged="#loadWeeklyAppointments" text="Weekly">
+               <content>
+                  <TableView fx:id="week_table" prefHeight="200.0" prefWidth="200.0">
+                     <columns>
+                        <TableColumn fx:id="dateColumn" prefWidth="166.0" text="Date" />
+                        <TableColumn fx:id="startColumn" prefWidth="89.0" text="Start Time" />
+                        <TableColumn fx:id="endColumn" prefWidth="67.0" text="End Time" />
+                        <TableColumn fx:id="customerColumn" prefWidth="188.0" text="Customer" />
+                        <TableColumn fx:id="typeColumn" prefWidth="172.0" text="Type" />
+                     </columns>
+                  </TableView>
+               </content>
+            </Tab>
+          <Tab fx:id="month_tab" onSelectionChanged="#loadMonthlyAppointments" text="Monthly">
+               <content>
+                  <TableView fx:id="month_table" prefHeight="362.0" prefWidth="476.0">
+                    <columns>
+                      <TableColumn fx:id="monthDateColumn" prefWidth="166.0" text="Date" />
+                      <TableColumn fx:id="monthStartColumn" prefWidth="89.0" text="Start Time" />
+                        <TableColumn fx:id="monthEndColumn" prefWidth="67.0" text="End Time" />
+                        <TableColumn fx:id="monthCustomerColumn" prefWidth="188.0" text="Customer" />
+                        <TableColumn fx:id="monthTypeColumn" prefWidth="172.0" text="Type" />
+                    </columns>
+                  </TableView>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+       <MenuBar prefHeight="26.0" prefWidth="683.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#closeButtonAction" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Navigation">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#appointmentForm" text="Appointment Form" />
+                  <MenuItem mnemonicParsing="false" onAction="#userForms" text="Customer Forms" />
+                  <MenuItem mnemonicParsing="false" onAction="#reports" text ="Reports"/>
+              </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
